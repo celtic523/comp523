@@ -89,11 +89,12 @@ class Image
 		$result = $mysqli->query("SELECT * FROM `image` WHERE type='" . $type . "'");
 		if($result){
 			$images = array();
-			foreach($result as $r){
+			$i = 0;
+			$j = $next_row = $result->num_rows;
+			while($i < $j){
 				$next_row = $result->fetch_row();
-				if($next_row){
-					$images[] = Image::findByID($next_row[0]);
-				}
+				$images[] = Image::findByID($next_row[0]);
+				$i = $i + 1;
 			}
 			return $images;
 		}
@@ -105,11 +106,12 @@ class Image
 		$result = $mysqli->query("SELECT * FROM `image` WHERE material='" . $material . "'");
 		if($result){
 			$images = array();
-			foreach($result as $r){
+			$i = 0;
+			$j = $next_row = $result->num_rows;
+			while($i < $j){
 				$next_row = $result->fetch_row();
-				if($next_row){
-					$images[] = Image::findByID($next_row[0]);
-				}
+				$images[] = Image::findByID($next_row[0]);
+				$i = $i + 1;
 			}
 			return $images;
 		}
@@ -121,11 +123,12 @@ class Image
 		$result = $mysqli->query("SELECT * FROM `image` WHERE period='" . $period . "'");
 		if($result){
 			$images = array();
-			foreach($result as $r){
+			$i = 0;
+			$j = $next_row = $result->num_rows;
+			while($i < $j){
 				$next_row = $result->fetch_row();
-				if($next_row){
-					$images[] = Image::findByID($next_row[0]);
-				}
+				$images[] = Image::findByID($next_row[0]);
+				$i = $i + 1;
 			}
 			return $images;
 		}
@@ -137,11 +140,12 @@ class Image
 		$result = $mysqli->query("SELECT * FROM `image` WHERE country='" . $country . "'");
 		if($result){
 			$images = array();
-			foreach($result as $r){
+			$i = 0;
+			$j = $next_row = $result->num_rows;
+			while($i < $j){
 				$next_row = $result->fetch_row();
-				if($next_row){
-					$images[] = Image::findByID($next_row[0]);
-				}
+				$images[] = Image::findByID($next_row[0]);
+				$i = $i + 1;
 			}
 			return $images;
 		}

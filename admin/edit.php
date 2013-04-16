@@ -119,9 +119,9 @@
 					print("<div class='right'><em>Find Spot: </em><input type='text' id='find' name='find' class='input' value='" . $find . "'></div>");
 					print("<div class='right'><em>Date: </em><input type='text' id='date' name='date' class='input' value='" . $date . "'></div>");
 					print("<div class='right'><em>Collection: </em><input type='text' id='collection' name='collection' class='input' value='" . $collection . "'></div>");
-					print("<div class='right'><input type='submit' name='submit' value='Update' id='button'></div></form>");
+					print("<div class='right'><input type='submit' name='submit' value='Update' id='button' class='upload'></div></form>");
 					print("</div><div id='image'><img src='../uploads/" . $file . "' id='" . $file . "'></div>");
-					print("<button id='delete'>Delete</button>");
+					print("<button class='delete'>Delete</button>");
 				}
 			?>
 			<div id="response"></div> 
