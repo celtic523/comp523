@@ -1,0 +1,6 @@
+<?php
+$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
+if(is_null(print)){
+
+}
+?>

@@ -17,8 +17,10 @@ $(document).ready(function() {
 		}); 
 	});
 	
+	//delete the image
 	$('#delete').on('click', function(e){
 		e.preventDefault();
+		//confirm deletion
 		var sure = confirm('Are you sure you want to delete this image?');
 		if(sure == true){
 			$.ajax({  
@@ -26,8 +28,7 @@ $(document).ready(function() {
 				type: "GET",  
 				data: 'file=' + filename,  
 				success: function (res) { 
-					alert(res);
-					$("#response").append("<br>Image deleted. <a href='../search.html'>Return to the search page</a>"); //print success and give link back to search page
+					$("#response").append("<br>Image deleted. <a href='../imagesindex.html'>Return to the search page</a>"); //print success and give link back to search page
 				},
 				error: function(xhr, ajaxOptions, thrownError){
 					$("#response").append("<br>Error: " + thrownError); //print error

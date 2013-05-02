@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Test</title>
+		<title>Celtic Images</title>
 		<script src="jquery.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="search.css">
 	</head>
 	<body>
 		<div id="navbar"><a href="/"><img src="cacsmlogo.gif"></a>
-				<a href="search.html"><img src="images2hi.gif"></a>
+				<a href="imagesindex.html"><img src="images2hi.gif"></a>
 				<a href="mapsindex.html"><img src="maps2hi.gif"></a>
 				<a href="designindex.html"><img src="design2hi.gif"></a>
 				<a href="topicsindex.html"><img src="topics2hi.gif"></a>
@@ -44,7 +44,7 @@
 					print("<div class='right'><em class='gray'>Find Spot: </em>" . $find . "</div>");
 					print("<div class='right'><em class='gray'>Date: </em>" . $date . "</div>");
 					print("<div class='right'><em class='gray'>Collection: </em>" . $collection . "</div>");
-					print("</div><div id='image'><img src='uploads/" . $file . "'></div>");
+					print("</div><div id='image'><img src='images/" . $file . "'></div>");
 				 }
 				 //create link to edit the photo
 				print("<div id='edit'><a href='admin/edit.php?file=" . $file . "'>Edit Info</a></div>");

@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var file;
 	var form = $("#form");
+	//display image on selecting a file
 	$("#file").on('change', function(evt){
 		$("#response").empty().append("Preview:");
 		file = this.files[0];
@@ -18,6 +19,7 @@ $(document).ready(function() {
 		$("#response").empty().append("Uploading . . .");
 		var formdata = new FormData(); 
 		formdata.append("file", file);
+		//get the file name
 		var fullPath = document.getElementById('file').value;
 		if (fullPath) {
 			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
@@ -26,6 +28,7 @@ $(document).ready(function() {
 				filename = filename.substring(1);
 			}
 		}
+		//upload file
 		$.ajax({  
 			url: "upload.php",  
 			type: "POST",  
@@ -42,6 +45,7 @@ $(document).ready(function() {
 		}); 
 		
 		var fdata = "file=" + filename + "&" + form.serialize();
+		//insert into database
 		$.ajax({
 					url: "image.php",
 					type: "POST",

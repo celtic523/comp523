@@ -28,7 +28,7 @@ class Image
 	
 	//called to insert into database
 	public static function create($file, $title, $type, $material, $period, $find, $country, $fdate, $collection) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		if(is_null($mysqli)){
 			return "connection not made";
 		}
@@ -41,7 +41,7 @@ class Image
 	}
 
 	public static function findByID($id) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM image WHERE id = " . $id);
 		if ($result) {
 			if ($result->num_rows == 0){
@@ -63,7 +63,7 @@ class Image
 	}
 	
 	public static function findByFile($file) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM image WHERE file = '" . $file . "'");
 		if ($result) {
 			if ($result->num_rows == 0){
@@ -85,7 +85,7 @@ class Image
 	}
 	
 	public static function findByType($type) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM `image` WHERE type='" . $type . "'");
 		if($result){
 			$images = array();
@@ -102,7 +102,7 @@ class Image
 	}
 	
 	public static function findByMaterial($material) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM `image` WHERE material='" . $material . "'");
 		if($result){
 			$images = array();
@@ -119,7 +119,7 @@ class Image
 	}
 	
 	public static function findByPeriod($period) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM `image` WHERE period='" . $period . "'");
 		if($result){
 			$images = array();
@@ -136,7 +136,7 @@ class Image
 	}
 	
 	public static function findByCountry($country) {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT * FROM `image` WHERE country='" . $country . "'");
 		if($result){
 			$images = array();
@@ -153,7 +153,7 @@ class Image
 	}
 
 	public static function getAll(){
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("SELECT id FROM photo");
 		$images = array();
 		foreach($result as $r){
@@ -276,14 +276,14 @@ class Image
 
 	//called to delete from database
 	public function delete() {
-	  $mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+	  $mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 	  $result = $mysqli->query("DELETE FROM `image` WHERE `id` = " . $this->id);
 	  return $result;
 	}
 
 	//called by setters to submit updates to database
 	private function update() {
-		$mysqli = new mysqli("localhost", "root", "comp523", "celtic523");
+		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
 		$result = $mysqli->query("UPDATE image SET title = '" . $this->title . "', type = '" . $this->type . "', material = '" . $this->material . "', period = '" . $this->period . 
 									"', find = '" . $this->find . "', country = '" . $this->country . "', date = '" . $this->fdate . "', collection = '" . $this->collection . "' WHERE id = " . $this->id);
 		return $result;

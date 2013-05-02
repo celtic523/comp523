@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Test</title>
+		<title>Edit Info</title>
 		<script src="jquery.js" type="text/javascript"></script>
 		<script src="update.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="test.css">
 	</head>
 	<body>
 		<div id="navbar"><a href="../"><img src="cacsmlogo.gif"></a>
-				<a href="../search.html"><img src="images2hi.gif"></a>
+				<a href="../imagesindex.html"><img src="images2hi.gif"></a>
 				<a href="../mapsindex.html"><img src="maps2hi.gif"></a>
 				<a href="../designindex.html"><img src="design2hi.gif"></a>
 				<a href="../topicsindex.html"><img src="topics2hi.gif"></a>
@@ -120,8 +120,8 @@
 					print("<div class='right'><em>Date: </em><input type='text' id='date' name='date' class='input' value='" . $date . "'></div>");
 					print("<div class='right'><em>Collection: </em><input type='text' id='collection' name='collection' class='input' value='" . $collection . "'></div>");
 					print("<div class='right'><input type='submit' name='submit' value='Update' id='button' class='upload'></div></form>");
-					print("</div><div id='image'><img src='../uploads/" . $file . "' id='" . $file . "'></div>");
-					print("<button class='delete'>Delete</button>");
+					print("</div><div id='image'><img src='../images/" . $file . "' id='" . $file . "'></div>");
+					print("<button class='delete' id='delete'>Delete</button>");
 				}
 			?>
 			<div id="response"></div> 
