@@ -248,14 +248,14 @@ class Image
 	
 	//called to update
 	public function setAll($title, $type, $material, $period, $find, $country, $fdate, $collection) {
-		$this->title = mysql_real_escape_string($title);
-		$this->type = mysql_real_escape_string($type);
-		$this->material = mysql_real_escape_string($material);
-		$this->period = mysql_real_escape_string($period);
-		$this->find = mysql_real_escape_string($find);
-		$this->country = mysql_real_escape_string($country);
-		$this->fdate = mysql_real_escape_string($fdate);
-		$this->collection = mysql_real_escape_string($collection);
+		$this->title = $title;
+		$this->type = $type;
+		$this->material = $material;
+		$this->period = $period;
+		$this->find = $find;
+		$this->country = $country;
+		$this->fdate = $fdate;
+		$this->collection = $collection;
 		return $this->update();
 	}
 
@@ -284,8 +284,10 @@ class Image
 	//called by setters to submit updates to database
 	private function update() {
 		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
-		$result = $mysqli->query("UPDATE image SET title = '" . $this->title . "', type = '" . $this->type . "', material = '" . $this->material . "', period = '" . $this->period . 
-									"', find = '" . $this->find . "', country = '" . $this->country . "', date = '" . $this->fdate . "', collection = '" . $this->collection . "' WHERE id = " . $this->id);
+		$result = $mysqli->query("UPDATE image SET title = '" . mysqli_real_escape_string($mysqli, $this->title) . "', type = '" . mysqli_real_escape_string($mysqli, $this->type) . "', material = '" . 
+									mysqli_real_escape_string($mysqli, $this->material) . "', period = '" . mysqli_real_escape_string($mysqli, $this->period) . "', find = '" . mysqli_real_escape_string($mysqli, $this->find) . 
+									"', country = '" . mysqli_real_escape_string($mysqli, $this->country) . "', date = '" . mysqli_real_escape_string($mysqli, $this->fdate) . 
+									"', collection = '" . mysqli_real_escape_string($mysqli, $this->collection) . "' WHERE id = " . $this->id);
 		return $result;
 	}
 }

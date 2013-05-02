@@ -284,11 +284,10 @@ class Image
 	//called by setters to submit updates to database
 	private function update() {
 		$mysqli = new mysqli("vm5.cas.unc.edu", "artceltic", "tTr6968@!@", "artceltic");
-		$this->title =  mysql_real_escape_string($this->title);
-		$result = $mysqli->query("UPDATE image SET title = '" . $this->title . "', type = '" . mysql_real_escape_string($this->type) . "', material = '" . 
-									mysql_real_escape_string($this->material) . "', period = '" . mysql_real_escape_string($this->period) . "', find = '" . mysql_real_escape_string($this->find) . 
-									"', country = '" . mysql_real_escape_string($this->country) . "', date = '" . mysql_real_escape_string($this->fdate) . 
-									"', collection = '" . mysql_real_escape_string($this->collection) . "' WHERE id = " . $this->id);
+		$result = $mysqli->query("UPDATE image SET title = '" . mysqli_real_escape_string($mysqli, $this->title) . "', type = '" . mysqli_real_escape_string($mysqli, $this->type) . "', material = '" . 
+									mysqli_real_escape_string($mysqli, $this->material) . "', period = '" . mysqli_real_escape_string($mysqli, $this->period) . "', find = '" . mysqli_real_escape_string($mysqli, $this->find) . 
+									"', country = '" . mysqli_real_escape_string($mysqli, $this->country) . "', date = '" . mysqli_real_escape_string($mysqli, $this->fdate) . 
+									"', collection = '" . mysqli_real_escape_string($mysqli, $this->collection) . "' WHERE id = " . $this->id);
 		return $result;
 	}
 }
